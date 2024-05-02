@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Другие магазины</title>
+</head>
+<body>
+    <h1>Магазины с электронными книгами</h1>
+    <ul>
+        {% for shop in object_list %}
+            <li>{{ shop.name }}</li>
+            <ul>
+                {% for ebook in shop.ebooks.all %}
+                    <li>{{ ebook.manufacturer }} {{ ebook.model }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+</body>
+</html>
